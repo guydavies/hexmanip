@@ -19,7 +19,8 @@ import (
 
 func prepend_to_length(new_hex_number string, max_hex_value_as_int int) string {
 	// check the length of the produced string and prepend 0s to expected length
-	if len(new_hex_number) < len(fmt.Sprintf("%x", max_hex_value_as_int)) {
+	var desired_group_length = len(fmt.Sprintf("%x", max_hex_valueas_int))
+	if len(new_hex_number) < desired_group_length {
 		var hex_strings = [2]string{"0", new_hex_number}
 		new_hex_number = strings.Join(hex_strings[:], "")
 		var padded_hex_number string = prepend_to_length(new_hex_number, max_hex_value_as_int)
