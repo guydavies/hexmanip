@@ -22,7 +22,7 @@ func prepend_to_length(new_hex_number string, max_hex_value_as_int int) string {
 	if len(new_hex_number) < len(fmt.Sprintf("%x", max_hex_value_as_int)) {
 		var hex_strings = [2]string{"0", new_hex_number}
 		new_hex_number = strings.Join(hex_strings[:], "")
-		var padded_hex_number string = prepend_to_length(new_hex_number, hex_digits_per_group)
+		var padded_hex_number string = prepend_to_length(new_hex_number, max_hex_value_as_int)
 		return padded_hex_number
 	} else {
 		return new_hex_number
