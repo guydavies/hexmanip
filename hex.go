@@ -1,4 +1,4 @@
-package hex
+package hexmanip
 
 // Hex manipulation functions
 //
@@ -6,8 +6,7 @@ package hex
 // import {
 //   "src/github.com/guydavies/hex"
 // }
-// foo = hex.prepend_to_length(new_hex_number, hex_digits_per_group)
-// bar = hex.generate_hex(required_number_of_hex_digits)
+// bar = hex.Generate_hex(required_number_of_hex_digits)
 //
 // Author: Guy Davies
 // Email: aguydavies@gmail.com
