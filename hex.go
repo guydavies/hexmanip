@@ -13,7 +13,6 @@ package hexmanip
 
 import (
 	"fmt"
-	"math"
 	"math/rand"
 	"strings"
 )
@@ -30,10 +29,11 @@ func prepend_to_length(new_hex_number string, hex_digits_per_group int) string {
 	}
 }
 
-func Generate_hex(hex_digits_per_group int) string {
-	// function to generate a single hex number of length hex_digits_per_group
+func Generate_hex(max_value_as_int int) string {
+	// function to generate a single random hex number from all zeroes upto max_value_as_int
 	// lots of rather ugly type conversions in order to be able to manipulate the objects
-	var rand_hex_str string = fmt.Sprintf("%x", (rand.Intn(int(math.Round(math.Pow(2, (4.0*float64(hex_digits_per_group))))) - 1)))
+	var rand_hex_str string = fmt.Sprintf("%x", (rand.Intn(max_value_as_int + 1)))
+	var hex_digits_per_group = len(fmt.Sprintf("%x", max_value_as_int))
 	var padded_hex_number string = prepend_to_length(rand_hex_str, hex_digits_per_group)
 	return padded_hex_number
 }
